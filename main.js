@@ -199,9 +199,21 @@ remainder(1, 8); // => 1
 // Value of sequence: | 0  | 1  |  1 | 2  | 3  | 5  | 8  | 13 | 21 | 34 | 55  |
 
 const fibonacci = function(fibNumber) {
-    // TODO: Your code here
+    if (fibNumber <= 1) {
+        return fibNumber;
+    }
+    return fibonacci(fibNumber - 1) + fibonacci(fibNumber - 2)
 };
 
 fibonacci(4); // => 3
 fibonacci(7); // => 13
 fibonacci(13); // => 233
+
+
+
+
+
+
+/*--------------------Extra Practice--------------------*/
+//______________________________________________________
+//Q1
