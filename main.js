@@ -135,25 +135,26 @@ countCharacter("hello", "z"); // => 0
 //______________________________________________________
 //Q6
 const oddOrEven = function(number) {
-    if (number === 1) {
-        return "the number is even"
-    } else if (number === 0) {
-        return "the number is  odd"
-    }
-    return oddOrEven(number / 2)
-};
-
+    if (number == 0) {
+        return "The number is even";
+    } else if (number == 1) {
+        return "The number is odd";
+    } else if (number < 0) {
+        return oddOrEven(-number);
+    } else
+        return oddOrEven(number - 2);
+}
 oddOrEven(8); // => "The number is even"
 oddOrEven(1); // => "The number is odd"
 //______________________________________________________
 //Q7
-// const multiply = function(numberOne, numberTwo) {
-//     if (numberTwo === 0) {
-//         return 0;
-//     }
+const multiply = function(numberOne, numberTwo) {
+    if (numberTwo === 0) {
+        return 0;
+    }
+    return numberOne + multiply(numberOne, numberTwo - 1);
 
-//     return numberOne + multiply(numberTwo - 1)
-// };
+};
 
 // multiply(2, 3); // => 6
 // multiply(4, 5); // => 20
