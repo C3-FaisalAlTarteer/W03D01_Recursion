@@ -49,7 +49,7 @@ console.log(arrowTitle)
 const countDown = function(number) {
     // console.log(number);
     if (number === 0) {
-        return;
+        return 0;
     }
     return number + '-' + countDown(number - 1);
 };
@@ -65,4 +65,32 @@ countDown(3); // => "3-2-1-0"
 
 /*--------------------Practice--------------------*/
 //______________________________________________________
+//Q1
+const factorial = function(number) {
+    if (number === 0) {
+        return 1;
+    }
+    return number * factorial(number - 1);
+};
+
+factorial(5); // 1 * 2 * 3 * 4 * 5 => 120
+factorial(3); // 1 * 2 * 3 => 6
+factorial(1); // => 1
+factorial(0); // => 1
+
+//______________________________________________________
 //Q2
+const sumCubes = function(numbers) {
+    if (!numbers[0]) {
+        return 0;
+    }
+    return Math.pow(numbers[0], 3) + sumCubes(numbers.slice(1))
+
+};
+
+sumCubes([1, 2]); // => 9
+sumCubes([1, 2, 3]); // => 36
+sumCubes([5, 3, 3]); // => 179
+sumCubes([]); // => 0
+//______________________________________________________
+//Q3
