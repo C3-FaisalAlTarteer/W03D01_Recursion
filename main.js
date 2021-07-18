@@ -94,3 +94,103 @@ sumCubes([5, 3, 3]); // => 179
 sumCubes([]); // => 0
 //______________________________________________________
 //Q3
+const getLength = function(string) {
+    if (!string[0]) {
+        return 0;
+    }
+    return 1 + getLength(string.slice(1))
+};
+
+getLength("Hello"); // => 5
+getLength("John"); // => 4
+getLength(""); // => 0
+//______________________________________________________
+//Q4
+const reverseString = function(string) {
+    if (string === "")
+        return "";
+
+    else
+        return reverseString(string.substr(1)) + string.charAt(0);
+};
+
+reverseString("Hello World"); // => "dlrow olleH"
+reverseString("John Doe"); // => "eoD nhoJ"
+reverseString(""); // => ""
+//______________________________________________________
+//Q5
+const countCharacter = function(string, character) {
+    if (string.length === 0)
+        return 0;
+    else if (string.charAt(0) == character)
+        return 1 + countCharacter(string.substring(1), character);
+    else
+        return countCharacter(string.substring(1), character);
+
+};
+
+countCharacter("hello", "l"); // => 2
+countCharacter("hello", "e"); // => 1
+countCharacter("hello", "z"); // => 0
+//______________________________________________________
+//Q6
+const oddOrEven = function(number) {
+    if (number === 1) {
+        return "the number is even"
+    } else if (number === 0) {
+        return "the number is  odd"
+    }
+    return oddOrEven(number / 2)
+};
+
+oddOrEven(8); // => "The number is even"
+oddOrEven(1); // => "The number is odd"
+//______________________________________________________
+//Q7
+// const multiply = function(numberOne, numberTwo) {
+//     if (numberTwo === 0) {
+//         return 0;
+//     }
+
+//     return numberOne + multiply(numberTwo - 1)
+// };
+
+// multiply(2, 3); // => 6
+// multiply(4, 5); // => 20
+//______________________________________________________
+//Q8
+const isPalindrome = function(string) {
+
+};
+
+isPalindrome("dad"); // => true
+isPalindrome("dads"); // => false
+isPalindrome("John doe"); // => false
+isPalindrome("a bcdcba"); // => true
+isPalindrome("a santa at nasa"); // => true
+isPalindrome("was it a car or a cat i saw"); // => true
+//______________________________________________________
+//Q9
+const remainder = function(numberOne, numberTwo) {
+
+};
+
+remainder(5, 1); // => 0
+remainder(7, 2); // => 1
+remainder(7, 4); // => 3
+remainder(8, 2); // => 0
+remainder(4, 6); // => 4
+remainder(1, 8); // => 1
+//______________________________________________________
+//Q10
+// find the relation between the fibonacci number and the value of the sequence at that number
+// Fibonacci numbers: | F0 | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 | F10 |
+// Value of sequence: | 0  | 1  |  1 | 2  | 3  | 5  | 8  | 13 | 21 | 34 | 55  |
+
+const fibonacci = function(fibNumber) {
+    // TODO: Your code here
+};
+
+fibonacci(4); // => 3
+fibonacci(7); // => 13
+fibonacci(13); // => 233
