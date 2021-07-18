@@ -161,7 +161,14 @@ const multiply = function(numberOne, numberTwo) {
 //______________________________________________________
 //Q8
 const isPalindrome = function(string) {
-
+    string = string.replaceAll(' ', '')
+    if (!string[0]) {
+        return true
+    }
+    if (string[0] === string[string.length - 1]) {
+        return true && isPalindrome(string.slice(1, string.length - 1));
+    }
+    return false
 };
 
 isPalindrome("dad"); // => true
@@ -173,7 +180,10 @@ isPalindrome("was it a car or a cat i saw"); // => true
 //______________________________________________________
 //Q9
 const remainder = function(numberOne, numberTwo) {
-
+    if (numberOne < numberTwo) {
+        return numberOne;
+    }
+    return remainder(numberOne - numberTwo, numberTwo)
 };
 
 remainder(5, 1); // => 0
