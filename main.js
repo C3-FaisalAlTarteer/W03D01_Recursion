@@ -217,3 +217,60 @@ fibonacci(13); // => 233
 /*--------------------Extra Practice--------------------*/
 //______________________________________________________
 //Q1
+const maximumNumber = function(numbers) {
+    numbers.slice();
+    if (numbers.length == 1) {
+        return numbers[0];
+    }
+
+    if (numbers[0] < numbers[1]) {
+        numbers.splice(0, 1);
+    } else {
+        numbers.splice(1, 1);
+    }
+
+    return maximumNumber(numbers);
+};
+
+maximumNumber([0, 5, 2, 10, 8, 6]); // => 10
+maximumNumber([0, 5, 6]); // => 6
+
+//______________________________________________________
+//Q2
+const family = {
+    name: "John",
+    child: {
+        name: "Bill",
+        child: {
+            name: "Mark",
+            child: {
+                name: "Terry",
+                child: null,
+            },
+        },
+    },
+};
+
+const familyTree = function(family) {
+    if (family[0] === family.child[0]) {
+        return 0;
+    }
+    return familyTree(family.name[2])
+};
+
+familyTree(family); // => "John Bill Mark Terry"
+//______________________________________________________
+//Q3
+const flattenArray = function(array) {
+    // return array.reduce((flat, i) => {
+    //     if (Array.isArray(i)) {
+    //         return flat.concat(flattenArray(i));
+    //     }
+    //     return flattenArray(flat.concat(i));
+    // }, []);
+};
+
+flattenArray([1, 2, 3, [4, 5, [6, 7]]]); // => [1, 2, 3, 4, 5, 6, 7]
+flattenArray([
+    [1, 2, [3, 4]]
+]); // => [1, 2, 3, 4]
